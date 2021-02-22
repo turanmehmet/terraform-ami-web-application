@@ -1,8 +1,8 @@
-resource "aws_security_group" "asg-sec-group" {
+resource "aws_security_group" "compA-sec-group" {
   name        = "asg-sec-group${var.app_name}"
   description = "Allow TLS inbound traffic from 80 and 443"
   ingress {
-    description = "TLS from VPC"
+    description = "https from VPC"
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"

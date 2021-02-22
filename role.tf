@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "s3policy" {
-  name        = "s3-policy"
+  name = "s3-policy"
 
   policy = <<EOT
 {

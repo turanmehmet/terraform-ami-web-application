@@ -1,5 +1,5 @@
 resource "aws_elb" "bar" {
-  name = "foobar-terraform-elbs"
+  name               = "foobar-terraform-elbs"
   availability_zones = data.aws_availability_zones.all.names
   listener {
     instance_port     = 80
@@ -9,12 +9,12 @@ resource "aws_elb" "bar" {
   }
 
   # need to add ssl_certificate_id
-    # listener {
-    # instance_port     = 443
-    # instance_protocol = "https"
-    # lb_port           = 443
-    # lb_protocol       = "https"
-    # ssl_certificate_id = "arn:aws:iam::000000000000:server-certificate/wu-tang.net"
+  # listener {
+  # instance_port     = 443
+  # instance_protocol = "https"
+  # lb_port           = 443
+  # lb_protocol       = "https"
+  # ssl_certificate_id = "arn:aws:iam::000000000000:server-certificate/wu-tang.net"
   # }
 
   health_check {
@@ -35,6 +35,6 @@ resource "aws_elb" "bar" {
 
 
 resource "aws_autoscaling_attachment" "asg_attachment_bar" {
-    autoscaling_group_name = aws_autoscaling_group.example.id
-    elb = aws_elb.bar.id
+  autoscaling_group_name = aws_autoscaling_group.example.id
+  elb                    = aws_elb.bar.id
 }
