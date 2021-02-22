@@ -3,7 +3,7 @@ resource "aws_launch_template" "appx" {
   image_id      = data.aws_ami.image.id
   instance_type = "t2.micro"
   key_name      = aws_key_pair.asg-key-pair.key_name
-  security_group_names = ["aws_security_group.compA-sec-group.name"]
+  # security_group_names = ["aws_security_group.compA-sec-group.name"]
  iam_instance_profile {
     name = aws_iam_instance_profile.appx_profile.name
   }
