@@ -2,7 +2,7 @@ module "apache-web-server" {
   app_name         = "CompanyA-appx4"
   source           = "../"
   aws_region       = "us-east-1"
-  users3           = "jaden"
+  users3           = "username"
   bucketname       = "s3-bucket-companya-appx4"
   desired_capacity = 3
   max_size         = 5
