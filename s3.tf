@@ -1,7 +1,3 @@
-resource "aws_s3_bucket" "s3b" {
+resource "aws_s3_bucket" "b" {
   bucket = var.bucketname
-    tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
 }

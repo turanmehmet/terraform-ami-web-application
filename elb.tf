@@ -7,11 +7,14 @@ resource "aws_elb" "bar" {
     lb_port           = 80
     lb_protocol       = "http"
   }
-  #   listener {
-  #   instance_port     = 443
-  #   instance_protocol = "https"
-  #   lb_port           = 443
-  #   lb_protocol       = "https"
+
+  # need to add ssl_certificate_id
+    # listener {
+    # instance_port     = 443
+    # instance_protocol = "https"
+    # lb_port           = 443
+    # lb_protocol       = "https"
+    # ssl_certificate_id = "arn:aws:iam::000000000000:server-certificate/wu-tang.net"
   # }
 
   health_check {

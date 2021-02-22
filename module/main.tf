@@ -3,7 +3,7 @@ module "apache-web-server" {
   source           = "../"
   aws_region       = "us-east-1"
   users3           = "jaden"
-  bucketname       = "terraform-backend-virginia-mehmet"
+  bucketname       = "s3-bucket-companya-appx"
   desired_capacity = 3
   max_size         = 5
   min_size         = 3

@@ -84,13 +84,10 @@ resource "aws_iam_policy" "s3policy" {
                 "s3:ReplicateDelete",
                 "s3:GetObjectVersion"
             ],
-            "Resource": [
-                "arn:aws:s3:::terraform-backend-virginia-mehmet",
-                "arn:aws:s3:*:206756510770:storage-lens/*",
-                "arn:aws:s3:::*/*",
-                "arn:aws:s3:*:206756510770:accesspoint/*",
-                "arn:aws:s3:*:206756510770:job/*"
-            ]
+            "Resource":
+                "${aws_s3_bucket.b.arn}"
+                
+            
         },
         {
             "Sid": "VisualEditor1",
@@ -113,11 +110,3 @@ resource "aws_iam_user_policy_attachment" "attachment" {
   user       = aws_iam_user.userid12.name
   policy_arn = aws_iam_policy.s3policy.arn
 }
-
-
-# resource "aws_iam_policy_attachment" "s3-attach" {
-#   name       = "s3-role-attachment"
-#   users      = aws_iam_user.userid12
-#   roles      = aws_iam_role.s3role
-#   policy_arn = aws_s3_bucket_policy.b.arn
-# }
